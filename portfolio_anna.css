@@ -1,0 +1,311 @@
+/* ==========================================================================
+   1. IMPOSTAZIONI GENERALI E DI BASE
+   ========================================================================== */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif; /* Il font di tutto il sito */
+    font-size: 10pt;
+    height: 100vh; /* Forza il body a occupare esattamente il 100% dello schermo */
+    overflow: hidden; /* Blocca lo scorrimento generale della pagina, scorreranno solo le singole sezioni */
+}
+
+a {
+    text-decoration: none; /* Toglie la sottolineatura ai link */
+    color: inherit; /* Il link prende il colore del testo circostante */
+    cursor: pointer; /* Fa apparire la "manina" quando passi sopra al link */
+}
+
+a:hover {
+    background-color: black; /* Sfondo nero quando passi col mouse sul link */
+    color: white;
+}
+
+/* Classi interattive usate da JavaScript */
+.active {
+    background-color: black;
+    color: white;
+}
+
+.activetwo {
+    opacity: 0.3; /* Rende semi-trasparente l'indice dei progetti quando apri l'About */
+}
+
+
+/* ==========================================================================
+   2. STRUTTURA SINISTRA (INDICE E TESTI PROGETTI)
+   ========================================================================== */
+/* Contenitore dell'indice cliccabile dei progetti */
+.projects {
+    position: fixed;
+    padding: 10px;
+    width: 45%;
+    height: fit-content;
+}
+
+/* Righe dell'indice (1, 2, 3...) */
+.projects01, .projects02, .projects03, .projects04, .projects05, .projects06, .projects07, .projects08, .projects09, .projects10 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14%;
+    width: 100%;
+    height: auto;
+}
+
+/* Effetto hover sull'indice */
+.projects01:hover, .projects02:hover, .projects03:hover, .projects04:hover, .projects05:hover, .projects06:hover, .projects07:hover, .projects08:hover, .projects09:hover, .projects10:hover {
+    background-color: black;
+    cursor: pointer;
+    color: white;
+}
+
+/* Contenitore delle descrizioni dei singoli progetti (text, team, year...) */
+.info-container {
+    position: fixed;
+    top: 240px; /* Distanza dall'alto per non scontrarsi con l'indice */
+    padding: 10px;
+    width: 45%;
+    overflow: hidden; 
+}
+
+/* Struttura interna delle descrizioni */
+.text, .team, .links, .year, .type {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 8%;
+    gap: 6%;
+    width: 100%;
+}
+
+/* Larghezza colonne usate per testi progetti */
+.num { width: 5%; } /* Etichetta (es. "text") */
+.words { width: 74%; } /* Testo vero e proprio */
+
+
+/* ==========================================================================
+   3. STRUTTURA DESTRA (GALLERIA FOTOGRAFICA)
+   ========================================================================== */
+.gallery {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%; 
+    overflow-y: auto; /* Permette lo scorrimento verticale delle foto */
+    z-index: 1;
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Animazione fluida quando diventa fullscreen */
+    
+    /* Nasconde la barra di scorrimento su Firefox/Edge per un design più pulito */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+/* Nasconde la barra di scorrimento su Chrome/Safari */
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item.active {
+    display: block; 
+    z-index: 0;
+}
+
+img {
+    width: 100%;
+    display: block; /* Rimuove lo spazio vuoto (bug visivo) sotto le immagini */
+}
+
+/* Classe aggiunta da JavaScript per ingrandire la galleria */
+.gallery.fullscreen {
+    width: 100% !important; 
+    background-color: white; 
+    
+    /* --- LA MAGIA PER COPRIRE TUTTO --- */
+    z-index: 999 !important; /* Il numero 999 è così alto che schiaccia in secondo piano il Footer, l'About, il CV e i menu! */
+}
+
+
+/* ==========================================================================
+   4. MINIATURE CENTRALI (SELETTORE IMMAGINI)
+   ========================================================================== */
+.selector-container { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 50px; 
+    z-index: 1000; /* Alzato a 1000! Adesso vince contro il 999 della galleria fullscreen */
+    cursor: pointer; 
+}
+
+/* Effetto negativo al passaggio del mouse sulle singole miniature */
+.selector img:hover {
+    cursor: pointer;
+    filter: invert(100%);
+}
+
+
+/* ==========================================================================
+   5. SEZIONE ABOUT E CURRICULUM VITAE (IN BASSO)
+   ========================================================================== */
+/* Il blocco che contiene la barra cliccabile e tutto l'About */
+.down {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    width: 45%;
+    z-index: 10; /* Assicura che la barra di chiusura stia sempre in primissimo piano */
+}
+
+/* Barra cliccabile per aprire l'About */
+.footer {
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14%;
+    width: 100%;
+    z-index: 0;
+}
+
+.footer:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* Il contenitore bianco che si "srotola" verso l'alto */
+.aboutopen {
+    width: 100%;
+    display: none;
+    background-color: white; /* Copre i testi opachi dietro */
+    
+    /* Cresce dal basso fino al tetto dello schermo (meno l'altezza del footer) */
+    max-height: calc(100vh - 60px); 
+    overflow-y: auto; /* Attiva lo scorrimento del testo al suo interno se è troppo lungo */
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+    
+    /* Nasconde la scrollbar */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.aboutopen::-webkit-scrollbar {
+    display: none;
+}
+
+/* Allineamento Bio e Link contatti (simula l'allineamento dei progetti) */
+.aboutopen > p, .about-default {
+    margin-left: 19%;
+    width: 74%;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Formattazione CV interno */
+.about-cv {
+    margin-left: 0; 
+    width: 100%;
+}
+
+.cv-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 8%; /* Allineamento uguale alle etichette dei progetti */
+    gap: 6%; 
+}
+
+/* Colonne del CV (identiche matematicamente a .num e .words) */
+.cv-num { width: 5%; }
+.cv-words { width: 74%; }
+
+
+/* ==========================================================================
+   6. TESTI SOVRAPPOSTI (TITOLI IMMAGINI O ALTRO)
+   ========================================================================== */
+.text-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    background-color: white;
+    text-decoration: none;
+    z-index: 10;
+    padding-top: 10px;
+    overflow-x: visible;
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   7. VERSIONE SMARTPHONE (TUTTO CIÒ CHE ACCADE SOTTO I 600px DI SCHERMO)
+   ========================================================================== */
+/* Etichette dei progetti (appaiono solo su telefono) */
+.projectsresp-container {
+    position: absolute;
+    z-index: 10; /* Sta sopra alle immagini */
+    padding-left: 6%;
+    padding-top: 10px;
+    width: 100%;
+    font-size: 10pt;
+    pointer-events: none; /* Impedisce che il testo blocchi il "click" sulle foto sottostanti */
+}
+
+/* Sfondo bianco stile evidenziatore per i testi mobili */
+.projectsresp span {
+    background-color: white;
+    opacity: 93%;
+    padding: 2px 6px; /* Bordino bianco laterale */
+    line-height: 1.6;
+    /* Applica lo sfondo separatamente a ogni singola riga di testo quando va a capo */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+/* REGOLE DI IMPAGINAZIONE AL DI SOTTO DEI 600PX */
+@media (max-width: 600px) {
+    /* Il footer copre l'intera larghezza */
+    .down {
+        width: 100%; 
+        background-color: white; 
+        opacity: 93%;
+        padding: 15px 5%; 
+        box-sizing: border-box; 
+        z-index: 99; /* MODIFICA: Alzato a 99 per schiacciare i titoletti dei progetti (che erano a 10) */
+    }
+    
+    .footer {
+        padding-top: 5px; 
+    }
+    
+    /* Il contenitore About si alza fino a toccare il tetto del telefono! */
+    .aboutopen {
+        max-height: calc(100vh - 55px); /* MODIFICA: Prende il 100% dello schermo meno lo spazio per il bottone in basso, coprendo tutta la foto */
+    }
+    
+    /* Riporta margini e padding del CV/Bio a misure ideali per schermi stretti */
+    .aboutopen > p, .about-default, .cv-item {
+        margin-left: 0;
+        padding-left: 5%;
+        gap: 5%;
+        width: 90%;
+    }
+    
+    /* Ingrandisce la colonna etichetta del CV per farci stare le parole */
+    .cv-num { width: 15%; }
+    .cv-words { width: 80%; }
+
+}

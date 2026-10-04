@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Chiara Marsili - Portfolio</title>
+    
+    <!-- Icona del sito (visibile nella scheda del browser) -->
+    <link rel="icon" href="./favicon.png" type="image/png">
+    <!-- Collegamento al file CSS che abbiamo appena sistemato -->
+    <link rel="stylesheet" href="portfolio_anna.css">
+    
+    <!-- Caricamento di jQuery (la libreria che fa funzionare le animazioni e i click) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+      
+    <!-- =======================================================================
+         1. MENU DI SINISTRA (Visibile solo su PC)
+         ======================================================================= -->
+    <div class="projects">
+        <div class="projects10" data-index="0"><div class="num">1</div><div>City in AUGUST</div></div>
+        <div class="projects10" data-index="1"><div class="num">2</div><div>I tre sardi dell'ISIA</div></div>
+        <div class="projects10" data-index="2"><div class="num">3</div><div>LOOP</div></div>
+        <div class="projects10" data-index="3"><div class="num">4</div><div>GRRRILL</div></div>
+        <div class="projects10" data-index="4"><div class="num">5</div><div>Il SILENZIO delle vittime</div></div>
+        <div class="projects01" data-index="5"><div class="num">6</div><div>Notturno marieclaire</div></div>
+        <div class="projects02" data-index="6"><div class="num">7</div><div>marieclaire x RITUALS</div></div>
+    </div>
+
+    <!-- =======================================================================
+         2. TESTI E DESCRIZIONI DEI PROGETTI
+         ======================================================================= -->
+    
+    <!-- 2A. Testi per Desktop (Visibili a sinistra) -->
+    <div class="info-container">
+        <div class="info" data-index="0">
+            <div class="text"><div class="num">text</div><div class="words">Lorem ipsum dolor sit amet...</div></div>
+            <div class="team"><div class="num">team</div><div>Anna-Chiara Marsili</div></div>
+            <div class="year"><div class="num">year</div><div>2025</div></div>
+            <div class="type"><div class="num">typology</div><div>Photography</div></div>
+        </div>
+        <!-- Progetto 2 -->
+        <div class="info" data-index="1">
+            <div class="text"><div class="num">text</div><div class="words">Lorem ipsum dolor sit amet...</div></div>
+            <div class="team"><div class="num">team</div><div>Francesco Cocconi<br>Allegra Costato<br>Anna-Chiara Marsili<br>Vittoria Sirtori</div></div>
+            <div class="year"><div class="num">year</div><div>2024</div></div>
+            <div class="type"><div class="num">typology</div><div>Editorial Design</div></div>
+        </div>
+        <!-- Progetto 3 -->
+        <div class="info" data-index="2">
+            <div class="text"><div class="num">text</div><div class="words">Lorem ipsum dolor sit amet...</div></div>
+            <div class="team"><div class="num">team</div><div>Anna-Chiara Marsili</div></div>
+            <div class="year"><div class="num">year</div><div>2025</div></div>
+            <div class="type"><div class="num">typology</div><div>3D Modelling</div></div>
+        </div>
+        <!-- Progetto 4 -->
+        <div class="info" data-index="3">
+            <div class="text"><div class="num">text</div><div class="words">Motion design for the launch of Sovrumana Celestialis...</div></div>
+            <div class="team"><div class="num">team</div><div>Lara Grimelli<br>Anna Chiara Marsili<br>Filippo Mirandola<br>Greta Piccioli<br>Giulia Roberti</div></div>
+            <div class="year"><div class="num">year</div><div>2024</div></div>
+            <div class="type"><div class="num">typology</div><div>Brand Design</div></div>
+        </div>
+        <!-- Progetto 5 -->
+        <div class="info" data-index="4">
+            <div class="text"><div class="num">text</div><div class="words">Motion Design for the launch of the twinge...</div></div>
+            <div class="team"><div class="num">team</div><div>Giulio Ferretti<br>Anna Chiara Marsili<br>Beatrice Nati<br>Mariastella Sanguineti<br>Lidia Toniazzo</div></div>
+            <div class="year"><div class="num">year</div><div>2025</div></div>
+            <div class="type"><div class="num">typology</div><div>Social Design</div></div>
+        </div>
+        <!-- Progetto 6 -->
+        <div class="info" data-index="5">
+            <div class="text"><div class="num">text</div><div class="words">00Magazine. 00 is a new beginning...</div></div>
+            <div class="team"><div class="num">team</div><div>Anna-Chiara Marsili</div></div>
+            <div class="year"><div class="num">year</div><div>2025</div></div>
+            <div class="type"><div class="num">typology</div><div>Exhibition Design</div></div>
+        </div>
+        <!-- Progetto 7 -->
+        <div class="info" data-index="6" style="display: none;">
+            <div class="text"><div class="num">text</div><div class="words">Nature repeats forms formed by repeated forms...</div></div>
+            <div class="team"><div class="num">team</div><div>Anna-Chiara Marsili</div></div>
+            <div class="year"><div class="num">year</div><div>2026</div></div>
+            <div class="type"><div class="num">typology</div><div>Carrier Card Design</div></div>
+        </div>
+    </div>
+
+    <!-- 2B. Etichette per Mobile (Appaiono fluttuanti sopra le immagini sui telefoni) -->
+    <div class="projectsresp-container" style="display: none;">
+        <div class="projectsresp" data-index="0"><span class="respname">City in AUGUST<br>2025<br>Photography</span></div>
+        <div class="projectsresp" data-index="1"><span class="respname">I tre sardi dell'ISIA<br>2024<br>Editorial Design</span></div>
+        <div class="projectsresp" data-index="2"><span class="respname">LOOP<br>2025<br>3D Modelling</span></div>
+        <div class="projectsresp" data-index="3"><span class="respname">GRRRILL<br>2024<br>Brand Design</span></div>
+        <div class="projectsresp" data-index="4"><span class="respname">Il SILENZIO delle vittime<br>2025<br>Social Design</span></div>
+        <div class="projectsresp" data-index="5"><span class="respname">Notturno marieclaire<br>2025<br>Exhibition Design</span></div>
+        <div class="projectsresp" data-index="6"><span class="respname">marieclaire x RITUALS<br>2026<br>Carrier Card Design</span></div>
+    </div>
+
+
+    <!-- =======================================================================
+         3. MINIATURE CENTRALI (Il "Selector" che naviga tra le foto)
+         ======================================================================= -->
+    <div class="selector-container">
+        <!-- Miniature Progetto 1 -->
+        <div class="selector" data-index="0">
+            <img src="./portfolio_anna_IMG/WIEN/WIEN_1.jpg" data-index="1010" alt="Wien 1">
+            <img src="./portfolio_anna_IMG/WIEN/WIEN_2.jpg" data-index="1011" alt="Wien 2">
+            <img src="./portfolio_anna_IMG/WIEN/WIEN_3.jpg" data-index="1012" alt="Wien 3">
+            <img src="./portfolio_anna_IMG/WIEN/WIEN_4.jpg" data-index="1013" alt="Wien 4">
+            <img src="./portfolio_anna_IMG/WIEN/WIEN_5.jpg" data-index="1014" alt="Wien 5">
+            <img src="./portfolio_anna_IMG/WIEN/WIEN_6.jpg" data-index="1015" alt="Wien 6">
+            <img src="./portfolio_anna_IMG/WIEN/WIEN_7.jpg" data-index="1016" alt="Wien 7">
+        </div>
+        <!-- Miniature Progetto 2 -->
+        <div class="selector" data-index="1">
+            <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_1.jpg" data-index="1017" alt="I tre sardi 1">
+            <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_2.jpg" data-index="1018" alt="I tre sardi 2">
+            <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_3.jpg" data-index="1019" alt="I tre sardi 3">
+            <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_4.jpg" data-index="1020" alt="I tre sardi 4">
+            <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_5.jpg" data-index="1021" alt="I tre sardi 5">
+            <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_6.jpg" data-index="1022" alt="I tre sardi 6">
+        </div>
+        <!-- Miniature Progetto 3 -->
+        <div class="selector" data-index="2">
+            <img src="./portfolio_anna_IMG/LOOP/LOOP_1.jpg" data-index="1023" alt="Loop 1">
+            <img src="./portfolio_anna_IMG/LOOP/LOOP_2.jpg" data-index="1024" alt="Loop 2">
+            <img src="./portfolio_anna_IMG/LOOP/LOOP_3.jpg" data-index="1025" alt="Loop 3">
+            <img src="./portfolio_anna_IMG/LOOP/LOOP_4.jpg" data-index="1026" alt="Loop 4">
+        </div>
+        <!-- Miniature Progetto 4 -->
+        <div class="selector" data-index="3">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_1.png" data-index="1027" alt="Grrrill 1">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_2.jpg" data-index="1028" alt="Grrrill 2">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_3.jpg" data-index="1029" alt="Grrrill 3">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_4.jpg" data-index="1030" alt="Grrrill 4">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_5.jpg" data-index="1031" alt="Grrrill 5">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_6.webp" data-index="1032" alt="Grrrill 6">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_7.jpg" data-index="1033" alt="Grrrill 7">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_8.jpg" data-index="1034" alt="Grrrill 8">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_9.png" data-index="1035" alt="Grrrill 9">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_10.jpg" data-index="1036" alt="Grrrill 10">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_11.JPG" data-index="1037" alt="Grrrill 11">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_12.png" data-index="1038" alt="Grrrill 12">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_13.webp" data-index="1039" alt="Grrrill 13">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_14.jpg" data-index="1040" alt="Grrrill 14">
+            <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_15.jpg" data-index="1041" alt="Grrrill 15">
+        </div>
+        <!-- Miniature Progetto 5 -->
+        <div class="selector" data-index="4">
+            <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_1.jpg" data-index="1042" alt="Vittime 1">
+            <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_2.png" data-index="1043" alt="Vittime 2">
+            <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_3.jpg" data-index="1044" alt="Vittime 3">
+            <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_4.png" data-index="1045" alt="Vittime 4">
+            <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_5.JPG" data-index="1046" alt="Vittime 5">
+            <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_6.png" data-index="1047" alt="Vittime 6">
+            <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_7.png" data-index="1048" alt="Vittime 7">
+            <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_8.png" data-index="1049" alt="Vittime 8">
+        </div>
+        <!-- Miniature Progetto 6 -->
+        <div class="selector" data-index="5">
+            <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_1.jpg" data-index="1050" alt="Notturno 1">
+            <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_2.jpeg" data-index="1051" alt="Notturno 2">
+            <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_3.jpeg" data-index="1052" alt="Notturno 3">
+            <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_4.jpeg" data-index="1053" alt="Notturno 4">
+            <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_5.jpeg" data-index="1054" alt="Notturno 5">
+        </div>
+        <!-- Miniature Progetto 7 -->
+        <div class="selector" data-index="6">
+            <img src="./portfolio_anna_IMG/marieclaire x RITUALS/marieclaire x RITUALS_1.jpg" data-index="1055" alt="Rituals 1">
+            <img src="./portfolio_anna_IMG/marieclaire x RITUALS/marieclaire x RITUALS_2.JPG" data-index="1056" alt="Rituals 2">
+        </div>
+    </div>
+
+
+    <!-- =======================================================================
+         4. GALLERIA PRINCIPALE (La colonna destra che scorre)
+         ======================================================================= -->
+    <div class="gallery">
+        <div class="image-container">
+            <!-- Foto Progetto 1 -->
+            <div class="gallery-item" data-index="0">
+                <img src="./portfolio_anna_IMG/WIEN/WIEN_1.jpg" data-index="1010" alt="Wien 1">
+                <img src="./portfolio_anna_IMG/WIEN/WIEN_2.jpg" data-index="1011" alt="Wien 2">
+                <img src="./portfolio_anna_IMG/WIEN/WIEN_3.jpg" data-index="1012" alt="Wien 3">
+                <img src="./portfolio_anna_IMG/WIEN/WIEN_4.jpg" data-index="1013" alt="Wien 4">
+                <img src="./portfolio_anna_IMG/WIEN/WIEN_5.jpg" data-index="1014" alt="Wien 5">
+                <img src="./portfolio_anna_IMG/WIEN/WIEN_6.jpg" data-index="1015" alt="Wien 6">
+                <img src="./portfolio_anna_IMG/WIEN/WIEN_7.jpg" data-index="1016" alt="Wien 7">
+            </div>
+            <!-- Foto Progetto 2 -->
+            <div class="gallery-item" data-index="1">
+                <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_1.jpg" data-index="1017" alt="I tre sardi 1">
+                <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_2.jpg" data-index="1018" alt="I tre sardi 2">
+                <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_3.jpg" data-index="1019" alt="I tre sardi 3">
+                <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_4.jpg" data-index="1020" alt="I tre sardi 4">
+                <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_5.jpg" data-index="1021" alt="I tre sardi 5">
+                <img src="./portfolio_anna_IMG/I tre sardi dell'ISIA/I tre sardi dell'ISIA_6.jpg" data-index="1022" alt="I tre sardi 6">
+            </div>
+            <!-- Foto Progetto 3 -->
+            <div class="gallery-item" data-index="2">
+                <img src="./portfolio_anna_IMG/LOOP/LOOP_1.jpg" data-index="1023" alt="Loop 1">
+                <img src="./portfolio_anna_IMG/LOOP/LOOP_2.jpg" data-index="1024" alt="Loop 2">
+                <img src="./portfolio_anna_IMG/LOOP/LOOP_3.jpg" data-index="1025" alt="Loop 3">
+                <img src="./portfolio_anna_IMG/LOOP/LOOP_4.jpg" data-index="1026" alt="Loop 4">
+            </div>
+            <!-- Foto Progetto 4 -->
+            <div class="gallery-item" data-index="3">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_1.png" data-index="1027" alt="Grrrill 1">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_2.jpg" data-index="1028" alt="Grrrill 2">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_3.jpg" data-index="1029" alt="Grrrill 3">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_4.jpg" data-index="1030" alt="Grrrill 4">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_5.jpg" data-index="1031" alt="Grrrill 5">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_6.webp" data-index="1032" alt="Grrrill 6">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_7.jpg" data-index="1033" alt="Grrrill 7">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_8.jpg" data-index="1034" alt="Grrrill 8">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_9.png" data-index="1035" alt="Grrrill 9">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_10.jpg" data-index="1036" alt="Grrrill 10">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_11.JPG" data-index="1037" alt="Grrrill 11">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_12.png" data-index="1038" alt="Grrrill 12">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_13.webp" data-index="1039" alt="Grrrill 13">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_14.jpg" data-index="1040" alt="Grrrill 14">
+                <img src="./portfolio_anna_IMG/GRRRILL/GRRRILL_15.jpg" data-index="1041" alt="Grrrill 15">
+            </div>
+            <!-- Foto Progetto 5 -->
+            <div class="gallery-item" data-index="4">
+                <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_1.jpg" data-index="1042" alt="Vittime 1">
+                <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_2.png" data-index="1043" alt="Vittime 2">
+                <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_3.jpg" data-index="1044" alt="Vittime 3">
+                <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_4.png" data-index="1045" alt="Vittime 4">
+                <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_5.JPG" data-index="1046" alt="Vittime 5">
+                <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_6.png" data-index="1047" alt="Vittime 6">
+                <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_7.png" data-index="1048" alt="Vittime 7">
+                <img src="./portfolio_anna_IMG/Il SILENZIO delle vittime/Il SILENZIO delle vittime_8.png" data-index="1049" alt="Vittime 8">
+            </div>
+            <!-- Foto Progetto 6 -->
+            <div class="gallery-item" data-index="5">
+                <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_1.jpg" data-index="1050" alt="Notturno 1">
+                <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_2.jpeg" data-index="1051" alt="Notturno 2">
+                <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_3.jpeg" data-index="1052" alt="Notturno 3">
+                <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_4.jpeg" data-index="1053" alt="Notturno 4">
+                <img src="./portfolio_anna_IMG/Notturno marieclaire/Notturno marieclaire_5.jpeg" data-index="1054" alt="Notturno 5">
+            </div>
+            <!-- Foto Progetto 7 -->
+            <div class="gallery-item" data-index="6">
+                <img src="./portfolio_anna_IMG/marieclaire x RITUALS/marieclaire x RITUALS_1.jpg" data-index="1055" alt="Rituals 1">
+                <img src="./portfolio_anna_IMG/marieclaire x RITUALS/marieclaire x RITUALS_2.JPG" data-index="1056" alt="Rituals 2">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =======================================================================
+         5. FOOTER, ABOUT E CURRICULUM (La barra in basso a sinistra)
+         ======================================================================= -->
+    <div class="down">
+        <!-- Il blocco bianco scorrevole dell'About (inizialmente nascosto) -->
+        <div class="aboutopen">
+            
+            <!-- BIO E CONTATTI (Appaiono per primi quando apri l'About) -->
+            <div class="about-default">
+                <p>Passionate and creative designer with endless desire to grow, to learn, to question certainties, changing them or consolidating them when necessary. My passion towards art and design is the security that moves most of my life choices, in fact I have always thought that Design was the perfect reconciliation between creativity and rationality, the key to give a shape to everything that has no shape. Understand the deep conceptual value behind the design, and then bring it out, give it an appearance, which has not only aesthetic value but is able to trigger necessary emotions.</p>
+                <a href="https://www.instagram.com/cchiaranna/" target="_blank">instagram</a><br>
+                <a href="mailto:annachiara.marsili@gmail.com">mail</a><br>
+                <a href="#" id="cv">curriculum vitae</a>
+            </div>
+
+            <!-- IL TUO CURRICULUM VITAE (Nascosto finché non clicchi il link sopra) -->
+            <div class="about-cv" style="display: none; padding-top: 20px;">
+                <div class="cv-item">
+                    <div class="cv-num">edu</div>
+                    <div class="cv-words">
+                        MASTER’S DEGREE, PUBLIC AND CORPORATE COMMUNICATION<br>
+                        Università Statale di Milano (2026 - Present)<br><br>
+                        
+                        BACHELOR’S DEGREE, COMMUNICATION DESIGN<br>
+                        Politecnico di Milano (2022 - 2025)<br><br>
+                        
+                        HIGH SCHOOL DIPLOMA, SCIENTIFIC LYCEUM<br>
+                        Liceo Scientifico Statale G. Galilei Macerata (2017 - 2022)<br><br>
+                    </div>
+                </div>
+                
+                <div class="cv-item">
+                    <div class="cv-num">exp</div>
+                    <div class="cv-words">
+                        FREELANCE GRAPHIC DESIGNER<br>
+                        Hearst Italia, Elle (Mar 2026 - Present)<br>
+                        <i>Design and produce static graphic content for the Instagram account / Create digital assets aligned with the magazine’s visual identity</i><br><br>
+
+                        AU PAIR<br>
+                        Dublin, Ireland (Mar - Aug 2026)<br>
+                        <i>Cared for two children (ages 3 and 5) while forming global friendships</i><br><br>
+
+                        GRAPHIC DESIGNER INTERN<br>
+                        Hearst Italia, Elle and MarieClaire (Sep 2025 - Feb 2026)<br>
+                        <i>Assisted with magazine layout and print design / Collaborated on marketing graphics for both social media and the magazine / Designed event materials and installations</i>
+                    </div>
+                </div>
+                
+                <div class="cv-item">
+                    <div class="cv-num">skills</div>
+                    <div class="cv-words">
+                        DESIGN: Visual & Brand Identity, Editorial Design, Photo Editing, Social Media Design, Teamwork, Project Planning<br><br>
+                        SOFTWARE: InDesign, Illustrator, Photoshop, Figma, HTML, CSS, JavaScript, Blender, Word, Excel, Power Point
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-num">lang</div>
+                    <div class="cv-words">
+                        ITALIAN: Native speaker<br>
+                        ENGLISH: B2 level (IELTS Overall: 6.5 | Reading: 8.0 | Listening, Writing, Speaking: 6.0)
+                    </div>
+                </div>
+                
+                <!-- Link per tornare indietro e scaricare il PDF -->
+                <div class="cv-item">
+                    <div class="cv-num"></div>
+                    <div class="cv-words">
+                        <br>
+                        <a href="#" id="back-to-about">← back to about</a><br>
+                        <a href="./Anna_Chiara_Marsili_CV.pdf" target="_blank">download PDF version</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- La barra grigia che clicchi per aprire (sempre visibile) -->
+        <div class="footer">
+            <div class="num about"><i>About</i></div>
+            <div><i>Anna-Chiara Marsili</i></div>
+        </div>
+    </div>
+
+
+    <!-- =======================================================================
+         6. JAVASCRIPT: IL MOTORE DEL SITO (Animazioni e interazioni)
+         ======================================================================= -->
+    <script>
+    $(document).ready(function() {
+        const scrollOffset = 1;
+
+        // ---------------------------------------------------------------------
+        // A. SINCRONIZZAZIONE TESTI-FOTO (Funzione principale)
+        // Capisce quale blocco di foto stai guardando e aggiorna i testi a sinistra
+        // ---------------------------------------------------------------------
+        function updateInfo() {
+            const galleryItems = $('.gallery-item');
+            let currentIndex = 0;
+
+            // Controlla la posizione di ogni blocco di immagini rispetto allo schermo
+            galleryItems.each(function(index) {
+                const offset = $(this).offset().top;
+                const height = $(this).outerHeight();
+                if (offset < ($(window).scrollTop() + $(window).height()) && (offset + height) > $(window).scrollTop()) {
+                    currentIndex = index;
+                    return false; // Interrompe il ciclo appena trova il progetto attivo
+                }
+            });
+
+            if (currentIndex !== -1) {
+                // Aggiorna i testi del PC
+                $('.info').hide();
+                $('.info[data-index="' + currentIndex + '"]').show();
+                
+                // Aggiorna le miniature al centro
+                $('.selector').hide();
+                $('.selector[data-index="' + currentIndex + '"]').show();
+                
+                // Aggiorna le etichette mobili 
+                $('.projectsresp').hide();
+                $('.projectsresp[data-index="' + currentIndex + '"]').show();
+
+                // Cambia lo stile del menu di sinistra (evidenzia il progetto attivo)
+                $('.projects > div').css({'padding': '0px', 'gap': '14%'});
+                $('.projects > div[data-index="' + currentIndex + '"]').css({'padding-left': '8%', 'gap': '6%'});
+            }
+        }
+
+        // Esegue il controllo ogni volta che l'utente scorre la galleria
+        $('.gallery').on('scroll', updateInfo);
+        updateInfo(); // Lo esegue una volta all'avvio della pagina
+
+
+        // ---------------------------------------------------------------------
+        // B. CLICK SULLE MINIATURE CENTRALI
+        // Fa scorrere la galleria fino all'immagine cliccata
+        // ---------------------------------------------------------------------
+        $('.selector img, .selector video').on('click', function() {
+            const mediaIndex = $(this).data('index');
+            const $gallery = $('.gallery');
+            // Trova l'immagine corrispondente nella galleria grande
+            const target = $('.gallery img[data-index="' + mediaIndex + '"], .gallery video[data-index="' + mediaIndex + '"]');
+
+            if (target.length) {
+                const targetTop = target.position().top;
+                const absoluteTargetTop = targetTop + $gallery.scrollTop();
+                
+                // Capisce in quale progetto si trova la foto
+                const blockIndex = target.closest('.gallery-item').data('index');
+                let newScroll;
+
+                // Regola speciale: Alcuni progetti si centrano a metà schermo, gli altri partono dal tetto
+                if (blockIndex == 5 || blockIndex == 6 || mediaIndex == 1015) {
+                    newScroll = absoluteTargetTop + (target.outerHeight() / 2) - ($gallery.height() / 2);
+                } else {
+                    newScroll = absoluteTargetTop + scrollOffset;
+                }
+
+                // Fa l'animazione fluida
+                $gallery.animate({ scrollTop: newScroll }, 1000);
+            }
+        });
+
+
+        // ---------------------------------------------------------------------
+        // C. CLICK SUL MENU DEI PROGETTI (Indice a sinistra)
+        // ---------------------------------------------------------------------
+        $('.projects > div').on('click', function() {
+            const projectIndex = $(this).data('index');
+            const target = $('.gallery-item[data-index="' + projectIndex + '"]');
+
+            if (target.length) {
+                const galleryScrollTop = target.position().top + $('.gallery').scrollTop() + scrollOffset;
+                $('.gallery').animate({ scrollTop: galleryScrollTop }, 500);
+            }
+        });
+
+
+        // ---------------------------------------------------------------------
+        // D. GESTIONE ABOUT E CURRICULUM VITAE
+        // Apri/Chiudi pannelli e transizioni
+        // ---------------------------------------------------------------------
+        
+        // 1. Click sulla barra "About" in basso
+        $('.footer').click(function() {
+            $('.aboutopen').toggle(); // Mostra/Nasconde il blocco bianco
+            $(this).toggleClass('active'); // Colora la barra di nero
+            
+            // Rende il resto dei testi in background semi-trasparenti
+            $('.info-container').toggleClass('activetwo');
+            $('.projects').toggleClass('activetwo');
+            
+            // Sicurezza: se chiudi l'About mentre guardi il CV, resetta alla pagina Bio
+            if (!$('.aboutopen').is(':visible')) {
+                $('.about-cv').hide();
+                $('.about-default').show();
+            }
+        });
+
+        // 2. Click sul link "curriculum vitae" nella Bio
+        $('#cv').on('click', function(e) {
+            e.preventDefault(); // Impedisce il salto indesiderato a inizio pagina
+            $('.about-default').hide(); // Nasconde la Bio
+            $('.about-cv').fadeIn(300); // Fa apparire dolcemente il CV
+        });
+
+        // 3. Click sul link "back to about" in fondo al CV
+        $('#back-to-about').on('click', function(e) {
+            e.preventDefault();
+            $('.about-cv').hide();
+            $('.about-default').fadeIn(300); // Rimette la Bio originale
+        });
+
+
+        // ---------------------------------------------------------------------
+        // E. GESTIONE RESPONSIVE (TELEFONI VS COMPUTER)
+        // Applica regole JS diverse se lo schermo è piccolo o grande
+        // ---------------------------------------------------------------------
+        function checkWindowSize() {
+            if ($(window).width() <= 600) {
+                // Impostazioni per SMARTPHONE
+                $('.gallery').css({
+                    'position': 'relative',
+                    'width': '94%',
+                    'float': 'right'
+                });
+                $('.projects').hide(); // Nasconde indice PC
+                $('.info-container').hide(); // Nasconde descrizioni PC
+                
+                $('.down').show(); // Mostra la barra About
+                
+                // Ricalibra i controlli delle miniature per il telefono
+                $('.selector-container').css({
+                    'position': 'fixed', // Sta fermo mentre scorri
+                    'left': '0',
+                    'top': '50%',
+                    'transform': 'translate(0%, -50%)',
+                    'width': '12%',
+                    'z-index': '5'
+                });
+                
+                // Mostra i titoli dei progetti per il telefono (evidenziatore bianco)
+                $('.projectsresp-container').css({'display': 'block'});
+            } else {
+                // Impostazioni per DESKTOP
+                $('.gallery').css({'position': 'absolute', 'width': '50%', 'float': 'none'});
+                $('.projects, .down, .info-container').show();
+                
+                // Ripristina miniature al centro
+                $('.selector-container').css({'position': 'absolute', 'left': '50%', 'width': '50px'});
+                
+                // Nasconde i titoli dei progetti del telefono
+                $('.projectsresp-container').css({'display': 'none'});
+            }
+        }
+
+        // Avvia il controllo all'apertura e ogni volta che ridimensioni la finestra
+        checkWindowSize();
+        $(window).resize(function() { checkWindowSize(); });
+
+
+        // ---------------------------------------------------------------------
+        // F. CLICK SULLA GALLERIA (TUTTO SCHERMO E CENTRATURA FOTO)
+        // (Nota: Il blocco doppione è stato rimosso e unificato qui)
+        // ---------------------------------------------------------------------
+        $('.gallery').on('click', function (e) {
+            // Se clicchi su un link, ignora questa funzione
+            if ($(e.target).closest('a').length) return;
+
+            const $gallery = $('.gallery');
+            
+            // 1. Mette/Toglie la galleria a tutto schermo espandendo il CSS
+            $gallery.toggleClass('fullscreen');
+            
+            // 2. Capisce su che foto hai cliccato
+            const $clickedMedia = $(e.target).closest('img[data-index]');
+            let mediaIndex = null;
+            
+            if ($clickedMedia.length) {
+                mediaIndex = $clickedMedia.data('index');
+            }
+
+            // 3. Centra millimetricamente la foto appena cliccata
+            if (mediaIndex != null) {
+                setTimeout(function () {
+                    const $target = $('.gallery img[data-index="' + mediaIndex + '"]').first();
+
+                    if ($target.length) {
+                        const targetTop = $target.position().top;
+                        const newScroll = targetTop + $gallery.scrollTop() - ($gallery.height() - $target.outerHeight()) / 2;
+                        $gallery.scrollTop(newScroll); // Scorre per far stare la foto al centro del nuovo schermo intero
+                    }
+                }, 0); 
+            }
+        });
+        
+    });
+    </script>
+</body>
+</html>
