@@ -5,7 +5,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Times New Roman', Times, serif; /* Il font di tutto il sito */
-    font-size: 10pt;
+    font-size: 10.5pt;
     height: 100vh; /* Forza il body a occupare esattamente il 100% dello schermo */
     overflow: hidden; /* Blocca lo scorrimento generale della pagina, scorreranno solo le singole sezioni */
 }
@@ -17,13 +17,13 @@ a {
 }
 
 a:hover {
-    background-color: black; /* Sfondo nero quando passi col mouse sul link */
+    background-color: #adb5bd; /* Sfondo nero quando passi col mouse sul link */
     color: white;
 }
 
 /* Classi interattive usate da JavaScript */
 .active {
-    background-color: black;
+    background-color: #adb5bd;
     color: white;
 }
 
@@ -39,7 +39,7 @@ a:hover {
 .projects {
     position: fixed;
     padding: 10px;
-    width: 45%;
+    width: 50%;
     height: fit-content;
 }
 
@@ -56,7 +56,7 @@ a:hover {
 
 /* Effetto hover sull'indice */
 .projects01:hover, .projects02:hover, .projects03:hover, .projects04:hover, .projects05:hover, .projects06:hover, .projects07:hover, .projects08:hover, .projects09:hover, .projects10:hover {
-    background-color: black;
+    background-color: #adb5bd;
     cursor: pointer;
     color: white;
 }
@@ -64,9 +64,9 @@ a:hover {
 /* Contenitore delle descrizioni dei singoli progetti (text, team, year...) */
 .info-container {
     position: fixed;
-    top: 240px; /* Distanza dall'alto per non scontrarsi con l'indice */
+    top: 240px; 
     padding: 10px;
-    width: 45%;
+    width: 50%;
     overflow: hidden; 
 }
 
@@ -80,6 +80,11 @@ a:hover {
     padding-left: 8%;
     gap: 6%;
     width: 100%;
+}
+
+/* Restringe SOLO la riga del paragrafo testuale */
+.text {
+    width: 90%; /* 90% del contenitore = esattamente 45% dello schermo */
 }
 
 /* Larghezza colonne usate per testi progetti */
@@ -157,10 +162,8 @@ img {
 .down {
     position: fixed;
     bottom: 0;
-    left: 0;
     padding: 10px;
-    width: 45%;
-    z-index: 10; /* Assicura che la barra di chiusura stia sempre in primissimo piano */
+    width: 50%;
 }
 
 /* Barra cliccabile per aprire l'About */
@@ -176,7 +179,7 @@ img {
 }
 
 .footer:hover {
-    background-color: black;
+    background-color: #adb5bd;
     color: white;
     cursor: pointer;
 }
